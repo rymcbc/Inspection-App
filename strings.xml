@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">QA Assist</string>
+    
+    <!-- Permissions -->
+    <string name="permission_camera_rationale">Camera permission is required to take photos</string>
+    <string name="permission_storage_rationale">Storage permission is required to save files</string>
+    <string name="permission_location_rationale">Location permission is required for GPS coordinates</string>
+    
+    <!-- Form validation -->
+    <string name="error_field_required">This field is required</string>
+    <string name="error_field_too_long">Field exceeds maximum length</string>
+    
+    <!-- Messages -->
+    <string name="inspection_saved">Inspection saved successfully</string>
+    <string name="inspection_save_failed">Failed to save inspection</string>
+    <string name="pdf_open_failed">Could not open PDF file</string>
+    <string name="location_unavailable">Location not available</string>
+    
+    <!-- History -->
+    <string name="no_inspections_found">No inspections found</string>
+    <string name="search_hint">Search inspections...</string>
+</resources>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">QA Assist</string>
+    
+    <!-- Permissions -->
+    <string name="permission_camera_rationale">Camera permission is required to take photos</string>
+    <string name="permission_storage_rationale">Storage permission is required to save files</string>
+    <string name="permission_location_rationale">Location permission is required for GPS coordinates</string>
+    
+    <!-- Form validation -->
+    <string name="error_field_required">This field is required</string>
+    <string name="error_field_too_long">Field exceeds maximum length</string>
+    
+    <!-- Messages -->
+    <string name="inspection_saved">Inspection saved successfully</string>
+    <string name="inspection_save_failed">Failed to save inspection</string>
+    <string name="pdf_open_failed">Could not open PDF file</string>
+    <string name="location_unavailable">Location not available</string>
+    
+    <!-- History -->
+    <string name="no_inspections_found">No inspections found</string>
+    <string name="search_hint">Search inspections...</string>
+    
+    <!-- Buttons -->
+    <string name="add_picture">ADD PICTURE</string>
+    <string name="select_picture">SELECT</string>
+    <string name="save_inspection">SAVE INSPECTION</string>
+    <string name="delete">DELETE</string>
+    <string name="clear_form">CLEAR FORM</string>
+    
+    <!-- Form Fields -->
+    <string name="project">PROJECT</string>
+    <string name="olt">OLT</string>
+    <string name="fsa">FSA</string>
+    <string name="as_built">AS-BUILT</string>
+    <string name="inspection_type">INSPECTION TYPE</string>
+    <string name="equipment_id_type">EQUIPMENT ID/TYPE</string>
+    <string name="address">ADDRESS</string>
+    <string name="drawing">DRAWING</string>
+    <string name="observations">OBSERVATIONS</string>
+    <string name="photos">PHOTOS</string>
+    
+    <!-- Tabs -->
+    <string name="tab_inspections">INSPECTIONS</string>
+    <string name="tab_history">HISTORY</string>
+    
+    <!-- Content Descriptions -->
+    <string name="photo_content_description">Inspection Photo</string>
+    <string name="toolbar_navigation_description">Navigation</string>
+    <string name="search_icon_description">Search</string>
+</resources>

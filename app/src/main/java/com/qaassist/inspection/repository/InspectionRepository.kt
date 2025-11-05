@@ -25,6 +25,7 @@ class InspectionRepository(private val context: Context) {
             val entity = InspectionEntity(
                 date = form.date,
                 project = form.project,
+                municipality = form.municipality,
                 olt = form.olt,
                 fsa = form.fsa,
                 asBuilt = form.asBuilt,

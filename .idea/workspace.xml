@@ -5,34 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cca27695-0e77-4669-83bf-70ff7b25cf40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Create-SharePointLibrary.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Create-SharePointList.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/models/PhotoModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/App-NOBOX.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Inspection App.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/studiobot.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.kotlin/sessions/kotlin-compiler-13759884017021113859.salive" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/database/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/database/AppDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/database/dao/InspectionDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/database/dao/InspectionDao.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/database/entities/InspectionEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/database/entities/InspectionEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/fragments/InspectionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/fragments/InspectionFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/models/InspectionForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/models/InspectionForm.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/repository/InspectionRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/repository/InspectionRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/utils/DateUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/utils/DateUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/utils/PDFGenerator.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/utils/ExcelGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/utils/ExcelGenerator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/viewmodels/InspectionViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/qaassist/inspection/viewmodels/InspectionViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

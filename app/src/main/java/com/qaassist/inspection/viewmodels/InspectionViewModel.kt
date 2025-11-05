@@ -115,9 +115,12 @@ class InspectionViewModel(application: Application) : AndroidViewModel(applicati
     private fun getPathFromUri(uri: Uri): String? {
         val context = getApplication<Application>().applicationContext
         var path: String? = null
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        // This approach to get a direct file path is not reliable, especially for cloud-based or non-local URIs.
+        // It's generally better to work with streams directly from the URI.
+        // However, if a path is strictly needed for legacy reasons, this is a common attempt.
+        if ("content".equals(uri.scheme, ignoreCase = true)) {
             try {
-                 context.contentResolver.query(uri, arrayOf(MediaStore.MediaColumns.DATA), null, null, null)?.use { cursor ->
+                context.contentResolver.query(uri, arrayOf(MediaStore.MediaColumns.DATA), null, null, null)?.use { cursor ->
                     if (cursor.moveToFirst()) {
                         val columnIndex = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA)
                         path = cursor.getString(columnIndex)
@@ -138,112 +141,129 @@ class InspectionViewModel(application: Application) : AndroidViewModel(applicati
             _isLoading.value = true
             val context = getApplication<Application>().applicationContext
             try {
-                val getSafeString = { input: String? -> input?.replace(Regex("[/\\\\:*?\"<>|]"), "") ?: "N_A" }
-                val safeProject = getSafeString(form.project)
-                val safeMunicipality = getSafeString(form.municipality)
-                val safeOlt = getSafeString(form.olt)
-                val safeFsa = getSafeString(form.fsa)
-                val safeAsBuilt = getSafeString(form.asBuilt)
-                val safeInspectionType = getSafeString(form.inspectionType)
-                val safeEquipmentId = getSafeString(form.equipmentId)
-                val safeAddress = getSafeString(form.address)
-                val safeDrawing = getSafeString(form.drawing)
+                // All file I/O must happen off the main thread
+                val result = withContext(Dispatchers.IO) {
+                    val getSafeString = { input: String? -> input?.replace(Regex("[/\\\\:*?\"<>|]"), "") ?: "N_A" }
+                    val safeProject = getSafeString(form.project)
+                    val safeMunicipality = getSafeString(form.municipality)
+                    val safeOlt = getSafeString(form.olt)
+                    val safeFsa = getSafeString(form.fsa)
+                    val safeAsBuilt = getSafeString(form.asBuilt)
+                    val safeInspectionType = getSafeString(form.inspectionType)
+                    val safeEquipmentId = getSafeString(form.equipmentId)
+                    val safeAddress = getSafeString(form.address)
+                    val safeDrawing = getSafeString(form.drawing)
 
-                val baseFileName = "$safeEquipmentId-$safeDrawing-$safeAddress"
-                val excelDisplayName = "$baseFileName.xlsx"
-                
-                val statusDir = when (status) {
-                    "Deficiencies Present" -> "QA-Inspections With Deficiencies"
-                    "Ready For Final" -> "QA-Inspections Ready For Final"
-                    else -> "QA-Inspections"
-                }
-                
-                val projectSubDir = if (form.project in PROJECTS_TO_HIDE_OLT_FSA) {
-                    "$safeProject/$safeMunicipality/$safeAsBuilt/$safeInspectionType/$baseFileName"
-                } else {
-                    "$safeProject/$safeMunicipality/OLT-$safeOlt/FSA-$safeFsa/$safeAsBuilt/$safeInspectionType/$baseFileName"
-                }
-                val subdirectory = "$statusDir/$projectSubDir"
+                    val baseFileName = "$safeEquipmentId-$safeDrawing-$safeAddress"
+                    val excelDisplayName = "$baseFileName.xlsx"
+                    
+                    val statusDir = when (status) {
+                        "Deficiencies Present" -> "QA-Inspections With Deficiencies"
+                        "Ready For Final" -> "QA-Inspections Ready For Final"
+                        else -> "QA-Inspections"
+                    }
+                    
+                    val projectSubDir = if (form.project in PROJECTS_TO_HIDE_OLT_FSA) {
+                        "$safeProject/$safeMunicipality/$safeAsBuilt/$safeInspectionType/$baseFileName"
+                    } else {
+                        "$safeProject/$safeMunicipality/OLT-$safeOlt/FSA-$safeFsa/$safeAsBuilt/$safeInspectionType/$baseFileName"
+                    }
+                    val subdirectory = "$statusDir/$projectSubDir"
 
-                val resolver = context.contentResolver
-                val finalCopiedPhotoUris = mutableListOf<String>()
-                var finalExcelUri: Uri? = null
-                var finalExcelPath: String? = null
+                    val resolver = context.contentResolver
+                    val finalCopiedPhotoUris = mutableListOf<String>()
+                    var finalExcelUri: Uri? = null
+                    var finalExcelPath: String? = null
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    val relativePath = "${Environment.DIRECTORY_DOCUMENTS}/$ROOT_DIRECTORY/$subdirectory"
-                    val collection = MediaStore.Files.getContentUri("external")
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        val relativePath = "${Environment.DIRECTORY_DOCUMENTS}/$ROOT_DIRECTORY/$subdirectory"
+                        val collection = MediaStore.Files.getContentUri("external")
 
-                    (_photos.value ?: emptyList()).forEachIndexed { index, photoItem ->
-                        val photoDisplayName = "${baseFileName}_photo_${index + 1}.jpg"
-                        val photoValues = ContentValues().apply {
-                            put(MediaStore.MediaColumns.DISPLAY_NAME, photoDisplayName)
-                            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-                            put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath)
-                        }
-                        val newPhotoUri = resolver.insert(collection, photoValues)
-                        if (newPhotoUri != null) {
-                            resolver.openInputStream(photoItem.uri)?.use { input ->
-                                resolver.openOutputStream(newPhotoUri)?.use { output ->
-                                    input.copyTo(output)
+                        (_photos.value ?: emptyList()).forEachIndexed { index, photoItem ->
+                            val photoDisplayName = "${baseFileName}_photo_${index + 1}.jpg"
+                            val photoValues = ContentValues().apply {
+                                put(MediaStore.MediaColumns.DISPLAY_NAME, photoDisplayName)
+                                put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+                                put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath)
+                            }
+                            val newPhotoUri = resolver.insert(collection, photoValues)
+                            if (newPhotoUri != null) {
+                                try {
+                                    resolver.openInputStream(photoItem.uri)?.use { input ->
+                                        resolver.openOutputStream(newPhotoUri)?.use { output ->
+                                            input.copyTo(output)
+                                        }
+                                    }
+                                    finalCopiedPhotoUris.add(newPhotoUri.toString())
+                                } catch (e: Exception) {
+                                    Log.e("InspectionViewModel", "Failed to copy photo: ${photoItem.uri}", e)
+                                    // Optionally delete the created entry if copy fails
+                                    resolver.delete(newPhotoUri, null, null)
                                 }
                             }
-                            finalCopiedPhotoUris.add(newPhotoUri.toString())
                         }
-                    }
 
-                    val excelValues = ContentValues().apply {
-                        put(MediaStore.MediaColumns.DISPLAY_NAME, excelDisplayName)
-                        put(MediaStore.MediaColumns.MIME_TYPE, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-                        put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath)
-                    }
-                    finalExcelUri = resolver.insert(collection, excelValues)
-                    finalExcelPath = getPathFromUri(finalExcelUri!!)
+                        val excelValues = ContentValues().apply {
+                            put(MediaStore.MediaColumns.DISPLAY_NAME, excelDisplayName)
+                            put(MediaStore.MediaColumns.MIME_TYPE, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                            put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath)
+                        }
+                        finalExcelUri = resolver.insert(collection, excelValues)
 
-                } else {
-                    val documentsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
-                    val finalDir = File(documentsDir, "$ROOT_DIRECTORY/$subdirectory")
-                    finalDir.mkdirs()
+                    } else {
+                        val documentsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
+                        val finalDir = File(documentsDir, "$ROOT_DIRECTORY/$subdirectory")
+                        if (!finalDir.exists() && !finalDir.mkdirs()) {
+                             throw Exception("Failed to create directory: ${finalDir.absolutePath}")
+                        }
 
-                    (_photos.value ?: emptyList()).forEachIndexed { index, photoItem ->
-                        val photoDisplayName = "${baseFileName}_photo_${index + 1}.jpg"
-                        val photoFile = File(finalDir, photoDisplayName)
-                        resolver.openInputStream(photoItem.uri)?.use { input ->
-                            FileOutputStream(photoFile).use { output ->
-                                input.copyTo(output)
+                        (_photos.value ?: emptyList()).forEachIndexed { index, photoItem ->
+                            val photoDisplayName = "${baseFileName}_photo_${index + 1}.jpg"
+                            val photoFile = File(finalDir, photoDisplayName)
+                            try {
+                                resolver.openInputStream(photoItem.uri)?.use { input ->
+                                    FileOutputStream(photoFile).use { output ->
+                                        input.copyTo(output)
+                                    }
+                                }
+                                finalCopiedPhotoUris.add(Uri.fromFile(photoFile).toString())
+                            } catch (e: Exception) {
+                                Log.e("InspectionViewModel", "Failed to copy photo for legacy storage: ${photoItem.uri}", e)
                             }
                         }
-                        finalCopiedPhotoUris.add(Uri.fromFile(photoFile).toString())
+
+                        val excelFile = File(finalDir, excelDisplayName)
+                        finalExcelUri = Uri.fromFile(excelFile)
                     }
 
-                    val excelFile = File(finalDir, excelDisplayName)
-                    finalExcelUri = Uri.fromFile(excelFile)
-                    finalExcelPath = excelFile.absolutePath
+                    // CRASH FIX: Only proceed if the excel URI was successfully created
+                    if (finalExcelUri != null) {
+                        finalExcelPath = getPathFromUri(finalExcelUri) // Now safe to call
+                        ExcelGenerator.generateExcel(context, form, finalExcelUri)
+                        
+                        val finalForm = form.copy(
+                            excelUri = finalExcelUri.toString(),
+                            excelPath = finalExcelPath ?: "",
+                            photos = finalCopiedPhotoUris.map { PhotoModel(path = it) }
+                        )
+                        inspectionRepository.saveInspection(finalForm)
+                        true // Indicate success
+                    } else {
+                        false // Indicate failure
+                    }
                 }
 
-                if (finalExcelUri != null) {
-                    ExcelGenerator.generateExcel(context, form, finalExcelUri)
-                    
-                    val finalForm = form.copy(
-                        excelUri = finalExcelUri.toString(),
-                        excelPath = finalExcelPath ?: "",
-                        photos = finalCopiedPhotoUris.map { PhotoModel(path = it) }
-                    )
-                    inspectionRepository.saveInspection(finalForm)
-
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(context, "Inspection saved successfully", Toast.LENGTH_LONG).show()
-                        _saveStatus.value = true
-                    }
+                if (result) {
+                    Toast.makeText(context, "Inspection saved successfully", Toast.LENGTH_LONG).show()
+                    _saveStatus.value = true
                 } else {
-                    throw Exception("Failed to create Excel file URI.")
+                    throw Exception("Failed to create Excel file. URI was null.")
                 }
 
             } catch (e: Exception) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(context, e.message ?: "An unknown error occurred", Toast.LENGTH_LONG).show()
-                    _errorMessage.value = e.message
-                }
+                Log.e("InspectionViewModel", "Save failed", e)
+                Toast.makeText(context, "Error: ${e.message ?: "An unknown error occurred"}", Toast.LENGTH_LONG).show()
+                _errorMessage.value = e.message
             } finally {
                 _isLoading.value = false
             }

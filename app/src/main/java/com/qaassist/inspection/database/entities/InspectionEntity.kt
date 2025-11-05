@@ -9,6 +9,7 @@ data class InspectionEntity(
     val id: Long = 0,
     val date: String,
     val project: String,
+    val municipality: String,
     val olt: String,
     val fsa: String,
     val asBuilt: String,

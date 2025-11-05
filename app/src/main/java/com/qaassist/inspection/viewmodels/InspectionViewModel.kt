@@ -20,6 +20,7 @@ import com.google.gson.reflect.TypeToken
 import com.qaassist.inspection.database.entities.InspectionEntity
 import com.qaassist.inspection.models.InspectionForm
 import com.qaassist.inspection.models.PhotoItem
+import com.qaassist.inspection.models.PhotoModel
 import com.qaassist.inspection.repository.InspectionRepository
 import com.qaassist.inspection.utils.ExcelGenerator
 import kotlinx.coroutines.Dispatchers
@@ -173,7 +174,7 @@ class InspectionViewModel(application: Application) : AndroidViewModel(applicati
                     val relativePath = "${Environment.DIRECTORY_DOCUMENTS}/$ROOT_DIRECTORY/$subdirectory"
                     val collection = MediaStore.Files.getContentUri("external")
 
-                    form.photos.forEachIndexed { index, photoItem ->
+                    (_photos.value ?: emptyList()).forEachIndexed { index, photoItem ->
                         val photoDisplayName = "${baseFileName}_photo_${index + 1}.jpg"
                         val photoValues = ContentValues().apply {
                             put(MediaStore.MediaColumns.DISPLAY_NAME, photoDisplayName)
@@ -204,7 +205,7 @@ class InspectionViewModel(application: Application) : AndroidViewModel(applicati
                     val finalDir = File(documentsDir, "$ROOT_DIRECTORY/$subdirectory")
                     finalDir.mkdirs()
 
-                    form.photos.forEachIndexed { index, photoItem ->
+                    (_photos.value ?: emptyList()).forEachIndexed { index, photoItem ->
                         val photoDisplayName = "${baseFileName}_photo_${index + 1}.jpg"
                         val photoFile = File(finalDir, photoDisplayName)
                         resolver.openInputStream(photoItem.uri)?.use { input ->
@@ -226,7 +227,7 @@ class InspectionViewModel(application: Application) : AndroidViewModel(applicati
                     val finalForm = form.copy(
                         excelUri = finalExcelUri.toString(),
                         excelPath = finalExcelPath ?: "",
-                        photos = finalCopiedPhotoUris.map { PhotoItem(path = it, uri = it.toUri(), timestamp = System.currentTimeMillis()) }
+                        photos = finalCopiedPhotoUris.map { PhotoModel(path = it) }
                     )
                     inspectionRepository.saveInspection(finalForm)
 

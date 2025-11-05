@@ -106,7 +106,12 @@ ksp {
 }
 
 dependencies {
-    // Core Android
+    // Room Persistence Library
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
+    // Core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

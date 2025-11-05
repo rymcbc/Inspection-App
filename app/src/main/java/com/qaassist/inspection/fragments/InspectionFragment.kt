@@ -24,6 +24,7 @@ import com.qaassist.inspection.adapters.PhotoAdapter
 import com.qaassist.inspection.database.entities.InspectionEntity
 import com.qaassist.inspection.databinding.FragmentInspectionBinding
 import com.qaassist.inspection.models.InspectionForm
+import com.qaassist.inspection.models.PhotoModel
 import com.qaassist.inspection.models.isValid
 import com.qaassist.inspection.utils.DateUtils
 import com.qaassist.inspection.viewmodels.InspectionViewModel
@@ -283,6 +284,8 @@ class InspectionFragment : Fragment() {
             binding.etFsa.text.toString().trim()
         }
 
+        val photosForForm = (viewModel.photos.value ?: emptyList()).map { PhotoModel(path = it.path) }
+
         val form = InspectionForm(
             date = DateUtils.getCurrentDate(),
             project = projectName,
@@ -296,7 +299,7 @@ class InspectionFragment : Fragment() {
             drawing = binding.etDrawing.text.toString().trim(),
             observations = binding.etObservations.text.toString().trim(),
             status = status,
-            photos = viewModel.photos.value ?: emptyList()
+            photos = photosForForm
         )
         if (!form.isValid(viewModel.showCustomProjectField.value ?: false, viewModel.showCustomMunicipalityField.value ?: false)) {
             Toast.makeText(context, "Please fill in all required fields", Toast.LENGTH_SHORT).show()

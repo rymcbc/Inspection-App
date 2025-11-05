@@ -8,8 +8,7 @@ object DateUtils {
     private val dateFormatter = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
     private val displayDateFormatter = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
     private val timestampFormatter = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault())
-    private val pdfDateFormatter = SimpleDateFormat("MMMM dd, yyyy 'at' HH:mm", Locale.getDefault())
-    
+
     fun getCurrentDate(): String {
         return dateFormatter.format(Date())
     }
@@ -20,10 +19,6 @@ object DateUtils {
     
     fun getCurrentTimestamp(): String {
         return timestampFormatter.format(Date())
-    }
-    
-    fun getCurrentPDFDate(): String {
-        return pdfDateFormatter.format(Date())
     }
     
     fun formatDisplayDate(dateString: String): String {

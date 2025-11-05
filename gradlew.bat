@@ -36,6 +36,9 @@ for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
 @rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
 
+@rem Force the JAVA_HOME to the one from Android Studio
+set JAVA_HOME=C:\Temp\android-studio-2025.1.3.7-windows\android-studio\jbr
+
 @rem Find java.exe
 if defined JAVA_HOME goto findJavaFromJavaHome
 

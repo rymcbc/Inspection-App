@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 data class InspectionForm(
     val date: String,
     val project: String,
-    val municipality: String, // Added municipality field
+    val municipality: String,
     val olt: String,
     val fsa: String,
     val asBuilt: String,
@@ -17,7 +17,7 @@ data class InspectionForm(
     val drawing: String,
     val observations: String,
     val status: String,
-    val photos: List<PhotoItem> = emptyList(),
+    val photos: List<PhotoModel> = emptyList(),
     val latitude: Double? = null,
     val longitude: Double? = null,
     val excelPath: String? = null,
@@ -38,12 +38,6 @@ fun InspectionForm.isValid(isCustomProject: Boolean, isCustomMunicipality: Boole
     // Conditionally validate OLT and FSA
     if (project !in projectsToExcludeOltFsaValidation) {
         basicFieldsValid = basicFieldsValid && olt.isNotBlank() && fsa.isNotBlank()
-    }
-
-    if (isCustomProject && project.isBlank()) {
-        // This case should ideally be handled by ensuring `project` field gets the custom value
-        // or by directly checking the custom project field if it's passed to isValid.
-        // For now, relying on project.isNotBlank() for the custom project name.
     }
 
     // Municipality validation: must be non-blank whether it's from dropdown or custom field.

@@ -182,7 +182,7 @@ class InspectionRepository(private val context: Context) {
             inspectionDao.getInspectionsByProject(project)
         } catch (e: Exception) {
             Log.e("InspectionRepository", "Error loading inspections by project: $project", e)
-            emptyList()
+            emptyList<InspectionEntity>()
         }
     }
     
@@ -191,7 +191,7 @@ class InspectionRepository(private val context: Context) {
             inspectionDao.getInspectionsByType(type)
         } catch (e: Exception) {
             Log.e("InspectionRepository", "Error loading inspections by type: $type", e)
-            emptyList()
+            emptyList<InspectionEntity>()
         }
     }
     
@@ -203,14 +203,23 @@ class InspectionRepository(private val context: Context) {
             0
         }
     }
-    
+
+    suspend fun getInspections(): List<InspectionEntity> {
+        return try {
+            inspectionDao.getAllInspections()
+        } catch (e: Exception) {
+            Log.e("InspectionRepository", "Error loading inspections", e)
+            emptyList<InspectionEntity>()
+        }
+    }
+
     private fun parsePhotoPaths(json: String): List<String> {
         return try {
             val type = object : TypeToken<List<String>>() {}.type
-            gson.fromJson(json, type) ?: emptyList()
+            gson.fromJson(json, type) ?: emptyList<String>()
         } catch (e: Exception) {
             Log.e("InspectionRepository", "Error parsing photo paths JSON", e)
-            emptyList()
+            emptyList<String>()
         }
     }
 }

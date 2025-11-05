@@ -13,7 +13,6 @@
     <!-- Messages -->
     <string name="inspection_saved">Inspection saved successfully</string>
     <string name="inspection_save_failed">Failed to save inspection</string>
-    <string name="pdf_open_failed">Could not open PDF file</string>
     <string name="location_unavailable">Location not available</string>
     
     <!-- History -->

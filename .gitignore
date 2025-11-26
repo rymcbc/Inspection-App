@@ -3,3 +3,8 @@
 /app/build/
 /app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
 /build/
+
+# iOS/Swift Package Manager
+ios-app/.build/
+ios-app/.swiftpm/
+ios-app/Package.resolved

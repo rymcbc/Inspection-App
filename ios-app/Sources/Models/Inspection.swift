@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Inspection {
+class Inspection {
     var date: String
     var project: String
     var municipality: String
@@ -19,26 +19,26 @@ final class Inspection {
     var excelPath: String
     var excelUri: String
     var photosPaths: String
-    var createdTimestamp: Date
-
+    var createdTimestamp: Double
+    
     init(
-        date: String = "",
-        project: String = "",
-        municipality: String = "",
-        olt: String = "",
-        fsa: String = "",
-        asBuilt: String = "",
-        inspectionType: String = "",
-        equipmentId: String = "",
-        address: String = "",
-        drawing: String = "",
-        observations: String = "",
+        date: String,
+        project: String,
+        municipality: String,
+        olt: String,
+        fsa: String,
+        asBuilt: String,
+        inspectionType: String,
+        equipmentId: String,
+        address: String,
+        drawing: String,
+        observations: String,
         latitude: Double? = nil,
         longitude: Double? = nil,
         excelPath: String = "",
         excelUri: String = "",
         photosPaths: String = "",
-        createdTimestamp: Date = Date()
+        createdTimestamp: Double = Date().timeIntervalSince1970 * 1000
     ) {
         self.date = date
         self.project = project

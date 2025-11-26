@@ -3,172 +3,169 @@ import SwiftData
 
 struct InspectionFormView: View {
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.dismiss) private var dismiss
-
-    @State private var date: String
-    @State private var project: String
-    @State private var municipality: String
-    @State private var olt: String
-    @State private var fsa: String
-    @State private var asBuilt: String
-    @State private var inspectionType: String
-    @State private var equipmentId: String
-    @State private var address: String
-    @State private var drawing: String
-    @State private var observations: String
+    
+    @State private var date: String = ""
+    @State private var project: String = ""
+    @State private var municipality: String = ""
+    @State private var olt: String = ""
+    @State private var fsa: String = ""
+    @State private var asBuilt: String = ""
+    @State private var inspectionType: String = ""
+    @State private var equipmentId: String = ""
+    @State private var address: String = ""
+    @State private var drawing: String = ""
+    @State private var observations: String = ""
     @State private var latitude: Double?
     @State private var longitude: Double?
-
-    private var existingInspection: Inspection?
-    private var isEditing: Bool { existingInspection != nil }
-
-    init(inspection: Inspection? = nil) {
-        self.existingInspection = inspection
-        _date = State(initialValue: inspection?.date ?? Self.currentDateString())
-        _project = State(initialValue: inspection?.project ?? "")
-        _municipality = State(initialValue: inspection?.municipality ?? "")
-        _olt = State(initialValue: inspection?.olt ?? "")
-        _fsa = State(initialValue: inspection?.fsa ?? "")
-        _asBuilt = State(initialValue: inspection?.asBuilt ?? "")
-        _inspectionType = State(initialValue: inspection?.inspectionType ?? "")
-        _equipmentId = State(initialValue: inspection?.equipmentId ?? "")
-        _address = State(initialValue: inspection?.address ?? "")
-        _drawing = State(initialValue: inspection?.drawing ?? "")
-        _observations = State(initialValue: inspection?.observations ?? "")
-        _latitude = State(initialValue: inspection?.latitude)
-        _longitude = State(initialValue: inspection?.longitude)
+    
+    @State private var showingSaveAlert = false
+    @State private var alertMessage = ""
+    @State private var isSaving = false
+    
+    /// Validates that required fields are filled
+    private var isFormValid: Bool {
+        !date.trimmingCharacters(in: .whitespaces).isEmpty &&
+        !project.trimmingCharacters(in: .whitespaces).isEmpty &&
+        !equipmentId.trimmingCharacters(in: .whitespaces).isEmpty
     }
-
+    
     var body: some View {
-        Form {
-            Section(header: Text("Project Info")) {
-                TextField("Date", text: $date)
-                    .disabled(true)
-                TextField("Project", text: $project)
-                TextField("Municipality", text: $municipality)
-                HStack {
+        NavigationStack {
+            Form {
+                Section(header: Text("Basic Information")) {
+                    TextField("Date *", text: $date)
+                    TextField("Project *", text: $project)
+                    TextField("Municipality", text: $municipality)
                     TextField("OLT", text: $olt)
                     TextField("FSA", text: $fsa)
                 }
-            }
-
-            Section(header: Text("Details")) {
-                TextField("AS-BUILT", text: $asBuilt)
-                TextField("Inspection Type", text: $inspectionType)
-                TextField("Equipment ID/Type", text: $equipmentId)
-                HStack {
+                
+                Section(header: Text("Inspection Details")) {
+                    TextField("As-Built", text: $asBuilt)
+                    TextField("Inspection Type", text: $inspectionType)
+                    TextField("Equipment ID *", text: $equipmentId)
                     TextField("Address", text: $address)
                     TextField("Drawing", text: $drawing)
                 }
-            }
-
-            Section(header: Text("Observations")) {
-                TextEditor(text: $observations)
-                    .frame(minHeight: 100)
-            }
-
-            Section(header: Text("Location")) {
-                Button(action: captureLocation) {
-                    HStack {
-                        Image(systemName: "location.fill")
-                        Text("Capture Location")
+                
+                Section(header: Text("Observations")) {
+                    TextEditor(text: $observations)
+                        .frame(minHeight: 100)
+                }
+                
+                Section(header: Text("Location")) {
+                    if let lat = latitude, let lon = longitude {
+                        Text("Latitude: \(lat, specifier: "%.6f")")
+                        Text("Longitude: \(lon, specifier: "%.6f")")
+                    } else {
+                        Text("No location captured")
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    Button(action: getLocation) {
+                        Label("Get Location", systemImage: "location")
                     }
                 }
-                if let lat = latitude, let lon = longitude {
-                    Text("Lat: \(lat, specifier: "%.6f"), Lon: \(lon, specifier: "%.6f")")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                
+                Section(header: Text("Photos")) {
+                    Button(action: capturePhoto) {
+                        Label("Capture Photo", systemImage: "camera")
+                    }
+                }
+                
+                Section {
+                    Button(action: saveInspection) {
+                        if isSaving {
+                            ProgressView()
+                                .frame(maxWidth: .infinity)
+                        } else {
+                            Label("Save Inspection", systemImage: "square.and.arrow.down")
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                    .disabled(!isFormValid || isSaving)
+                }
+                
+                if !isFormValid {
+                    Section {
+                        Text("* Required fields must be filled")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
-
-            Section(header: Text("Photos")) {
-                Button(action: takePhoto) {
-                    HStack {
-                        Image(systemName: "camera.fill")
-                        Text("Add Picture")
-                    }
-                }
-                Button(action: selectPhoto) {
-                    HStack {
-                        Image(systemName: "photo.on.rectangle")
-                        Text("Select from Library")
-                    }
-                }
+            .navigationTitle("New Inspection")
+            .alert("Save Result", isPresented: $showingSaveAlert) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(alertMessage)
             }
         }
-        .navigationTitle(isEditing ? "Edit Inspection" : "New Inspection")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Save") {
-                    saveInspection()
-                }
-            }
-        }
     }
-
-    private static func currentDateString() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: Date())
-    }
-
-    private func captureLocation() {
-        // Placeholder for location capture
-        // TODO: Implement CoreLocation integration
-    }
-
-    private func takePhoto() {
-        // Placeholder for camera capture
-        // TODO: Implement UIImagePickerController or PhotosUI
-    }
-
-    private func selectPhoto() {
-        // Placeholder for photo library selection
-        // TODO: Implement PhotosPicker
-    }
-
+    
     private func saveInspection() {
-        if let inspection = existingInspection {
-            inspection.date = date
-            inspection.project = project
-            inspection.municipality = municipality
-            inspection.olt = olt
-            inspection.fsa = fsa
-            inspection.asBuilt = asBuilt
-            inspection.inspectionType = inspectionType
-            inspection.equipmentId = equipmentId
-            inspection.address = address
-            inspection.drawing = drawing
-            inspection.observations = observations
-            inspection.latitude = latitude
-            inspection.longitude = longitude
-        } else {
-            let newInspection = Inspection(
-                date: date,
-                project: project,
-                municipality: municipality,
-                olt: olt,
-                fsa: fsa,
-                asBuilt: asBuilt,
-                inspectionType: inspectionType,
-                equipmentId: equipmentId,
-                address: address,
-                drawing: drawing,
-                observations: observations,
-                latitude: latitude,
-                longitude: longitude
-            )
-            modelContext.insert(newInspection)
+        guard isFormValid, !isSaving else { return }
+        
+        isSaving = true
+        
+        let inspection = Inspection(
+            date: date,
+            project: project,
+            municipality: municipality,
+            olt: olt,
+            fsa: fsa,
+            asBuilt: asBuilt,
+            inspectionType: inspectionType,
+            equipmentId: equipmentId,
+            address: address,
+            drawing: drawing,
+            observations: observations,
+            latitude: latitude,
+            longitude: longitude
+        )
+        
+        modelContext.insert(inspection)
+        
+        do {
+            try modelContext.save()
+            alertMessage = "Inspection saved successfully!"
+            clearForm()
+        } catch {
+            alertMessage = "Error saving inspection: \(error.localizedDescription)"
         }
-        try? modelContext.save()
-        dismiss()
+        
+        isSaving = false
+        showingSaveAlert = true
+    }
+    
+    private func clearForm() {
+        date = ""
+        project = ""
+        municipality = ""
+        olt = ""
+        fsa = ""
+        asBuilt = ""
+        inspectionType = ""
+        equipmentId = ""
+        address = ""
+        drawing = ""
+        observations = ""
+        latitude = nil
+        longitude = nil
+    }
+    
+    private func capturePhoto() {
+        // Placeholder for camera functionality
+        // TODO: Implement camera capture using UIImagePickerController or PHPickerViewController
+    }
+    
+    private func getLocation() {
+        // Placeholder for location functionality
+        // TODO: Implement location capture using CoreLocation
     }
 }
 
 #Preview {
-    NavigationStack {
-        InspectionFormView()
-    }
-    .modelContainer(for: Inspection.self, inMemory: true)
+    InspectionFormView()
+        .modelContainer(for: Inspection.self, inMemory: true)
 }

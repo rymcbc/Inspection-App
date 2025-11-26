@@ -51,10 +51,15 @@ struct ExcelService {
         let fileURL = tempDir.appendingPathComponent(fileName)
         
         // Save workbook - SwiftXLSX saves to current directory by default
-        let filePath = book.save(fileName)
+        // SwiftXLSX's save method may save to the current working directory if only a filename is provided.
+        // To ensure the file is saved to the desired location, use the full path if supported.
+        let filePath = book.save(fileURL.path)
         
-        // Move from default save location to our desired location
-        if let savedPath = filePath {
+        // If the API does not support saving to a full path, filePath may be nil or not at the expected location.
+        // Add error handling to check if the file exists at fileURL.
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            return fileURL
+        } else if let savedPath = filePath {
             let savedURL = URL(fileURLWithPath: savedPath)
             do {
                 // Remove existing file if present

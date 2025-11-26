@@ -161,6 +161,7 @@ struct InspectionFormView: View {
             )
             modelContext.insert(newInspection)
         }
+        try? modelContext.save()
         dismiss()
     }
 }

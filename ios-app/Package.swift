@@ -16,7 +16,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/3973770/SwiftXLSX.git", from: "0.1.0")
+        .package(url: "https://github.com/maximkrouk/SwiftXLSX.git", from: "0.3.0")
     ],
     targets: [
         .executableTarget(

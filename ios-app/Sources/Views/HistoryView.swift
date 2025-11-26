@@ -31,12 +31,19 @@ struct HistoryView: View {
             } message: {
                 Text(exportErrorMessage)
             }
+            .onDisappear {
+                // Clean up temporary Excel files when leaving the view
+                ExcelCacheManager.shared.cleanupAllFiles()
+            }
         }
     }
     
     private func deleteInspections(at offsets: IndexSet) {
         for index in offsets {
-            modelContext.delete(inspections[index])
+            // Clean up cached Excel file for this inspection
+            let inspection = inspections[index]
+            ExcelCacheManager.shared.removeCachedURL(for: String(inspection.createdTimestamp))
+            modelContext.delete(inspection)
         }
     }
 }

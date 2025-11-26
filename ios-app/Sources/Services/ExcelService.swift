@@ -1,6 +1,60 @@
 import Foundation
 import SwiftXLSX
 
+/// Manages temporary Excel file cache and cleanup
+class ExcelCacheManager {
+    static let shared = ExcelCacheManager()
+    
+    private var cachedURLs: [String: URL] = [:]
+    private let cacheQueue = DispatchQueue(label: "com.inspectionapp.excelcache")
+    
+    private init() {}
+    
+    /// Gets cached URL for an inspection ID, or nil if not cached
+    func getCachedURL(for inspectionId: String) -> URL? {
+        cacheQueue.sync {
+            if let url = cachedURLs[inspectionId], FileManager.default.fileExists(atPath: url.path) {
+                return url
+            }
+            return nil
+        }
+    }
+    
+    /// Caches a URL for an inspection ID
+    func cacheURL(_ url: URL, for inspectionId: String) {
+        cacheQueue.sync {
+            cachedURLs[inspectionId] = url
+        }
+    }
+    
+    /// Cleans up all temporary Excel files
+    func cleanupAllFiles() {
+        cacheQueue.sync {
+            for (_, url) in cachedURLs {
+                try? FileManager.default.removeItem(at: url)
+            }
+            cachedURLs.removeAll()
+        }
+        
+        // Also clean up any orphaned inspection Excel files in temp directory
+        let tempDir = FileManager.default.temporaryDirectory
+        if let files = try? FileManager.default.contentsOfDirectory(at: tempDir, includingPropertiesForKeys: nil) {
+            for file in files where file.lastPathComponent.hasPrefix("Inspection_") && file.pathExtension == "xlsx" {
+                try? FileManager.default.removeItem(at: file)
+            }
+        }
+    }
+    
+    /// Removes cached URL for a specific inspection
+    func removeCachedURL(for inspectionId: String) {
+        cacheQueue.sync {
+            if let url = cachedURLs.removeValue(forKey: inspectionId) {
+                try? FileManager.default.removeItem(at: url)
+            }
+        }
+    }
+}
+
 struct ExcelService {
     /// Sanitizes a string for use in a filename by removing unsafe characters
     private static func sanitizeForFilename(_ input: String) -> String {
@@ -8,7 +62,27 @@ struct ExcelService {
         return input.components(separatedBy: unsafeCharacters).joined(separator: "_")
     }
     
+    /// Generates an Excel file for the inspection, using cache if available
     static func generateExcel(inspection: Inspection) -> URL? {
+        // Use createdTimestamp as unique identifier for caching
+        let inspectionId = String(inspection.createdTimestamp)
+        
+        // Check cache first
+        if let cachedURL = ExcelCacheManager.shared.getCachedURL(for: inspectionId) {
+            return cachedURL
+        }
+        
+        // Generate new file
+        guard let url = createExcelFile(for: inspection) else {
+            return nil
+        }
+        
+        // Cache the URL
+        ExcelCacheManager.shared.cacheURL(url, for: inspectionId)
+        return url
+    }
+    
+    private static func createExcelFile(for inspection: Inspection) -> URL? {
         let book = XWorkBook()
         let sheet = book.NewSheet("Inspection Details")
         

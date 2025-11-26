@@ -2,6 +2,12 @@ import Foundation
 import SwiftXLSX
 
 struct ExcelService {
+    /// Sanitizes a string for use in a filename by removing unsafe characters
+    private static func sanitizeForFilename(_ input: String) -> String {
+        let unsafeCharacters = CharacterSet(charactersIn: "/\\:*?\"<>|")
+        return input.components(separatedBy: unsafeCharacters).joined(separator: "_")
+    }
+    
     static func generateExcel(inspection: Inspection) -> URL? {
         let book = XWorkBook()
         let sheet = book.NewSheet("Inspection Details")
@@ -37,15 +43,17 @@ struct ExcelService {
             cell.value = .text(value)
         }
         
-        // Save to temporary directory
-        let fileName = "Inspection_\(inspection.date.replacingOccurrences(of: "/", with: "-"))_\(inspection.equipmentId).xlsx"
+        // Save to temporary directory with sanitized filename
+        let safeDate = sanitizeForFilename(inspection.date)
+        let safeEquipmentId = sanitizeForFilename(inspection.equipmentId)
+        let fileName = "Inspection_\(safeDate)_\(safeEquipmentId).xlsx"
         let tempDir = FileManager.default.temporaryDirectory
         let fileURL = tempDir.appendingPathComponent(fileName)
         
-        // Save workbook
+        // Save workbook - SwiftXLSX saves to current directory by default
         let filePath = book.save(fileName)
         
-        // Move from default save location to our desired location if needed
+        // Move from default save location to our desired location
         if let savedPath = filePath {
             let savedURL = URL(fileURLWithPath: savedPath)
             do {
@@ -57,7 +65,8 @@ struct ExcelService {
                 return fileURL
             } catch {
                 print("Error moving Excel file: \(error)")
-                return savedURL
+                // Return nil if we can't move the file to temp directory
+                return nil
             }
         }
         

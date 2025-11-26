@@ -19,6 +19,7 @@ class Inspection {
     var excelPath: String
     var excelUri: String
     var photosPaths: String
+    var createdTimestamp: Double
     
     init(
         date: String,
@@ -36,7 +37,8 @@ class Inspection {
         longitude: Double? = nil,
         excelPath: String = "",
         excelUri: String = "",
-        photosPaths: String = ""
+        photosPaths: String = "",
+        createdTimestamp: Double = Date().timeIntervalSince1970 * 1000
     ) {
         self.date = date
         self.project = project
@@ -54,5 +56,6 @@ class Inspection {
         self.excelPath = excelPath
         self.excelUri = excelUri
         self.photosPaths = photosPaths
+        self.createdTimestamp = createdTimestamp
     }
 }

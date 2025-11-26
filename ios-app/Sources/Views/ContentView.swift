@@ -5,7 +5,7 @@ struct ContentView: View {
         TabView {
             InspectionFormView()
                 .tabItem {
-                    Label("New Inspection", systemImage: "doc.text")
+                    Label("New Inspection", systemImage: "square.and.pencil")
                 }
             
             HistoryView()

@@ -2,10 +2,9 @@ import SwiftUI
 import SwiftData
 
 struct HistoryView: View {
-    @Query(sort: \Inspection.date, order: .reverse) private var inspections: [Inspection]
+    @Query(sort: \Inspection.createdTimestamp, order: .reverse) private var inspections: [Inspection]
     @Environment(\.modelContext) private var modelContext
     
-    @State private var exportedFileURL: URL?
     @State private var showingExportError = false
     @State private var exportErrorMessage = ""
     
@@ -13,9 +12,7 @@ struct HistoryView: View {
         NavigationStack {
             List {
                 ForEach(inspections) { inspection in
-                    InspectionRow(inspection: inspection, onExport: {
-                        exportExcel(for: inspection)
-                    })
+                    InspectionRow(inspection: inspection)
                 }
                 .onDelete(perform: deleteInspections)
             }
@@ -37,15 +34,6 @@ struct HistoryView: View {
         }
     }
     
-    private func exportExcel(for inspection: Inspection) {
-        if let url = ExcelService.generateExcel(inspection: inspection) {
-            exportedFileURL = url
-        } else {
-            exportErrorMessage = "Failed to generate Excel file."
-            showingExportError = true
-        }
-    }
-    
     private func deleteInspections(at offsets: IndexSet) {
         for index in offsets {
             modelContext.delete(inspections[index])
@@ -55,9 +43,9 @@ struct HistoryView: View {
 
 struct InspectionRow: View {
     let inspection: Inspection
-    let onExport: () -> Void
     
     @State private var exportedURL: URL?
+    @State private var isExporting = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

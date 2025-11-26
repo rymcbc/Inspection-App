@@ -20,13 +20,21 @@ struct InspectionFormView: View {
     
     @State private var showingSaveAlert = false
     @State private var alertMessage = ""
+    @State private var isSaving = false
+    
+    /// Validates that required fields are filled
+    private var isFormValid: Bool {
+        !date.trimmingCharacters(in: .whitespaces).isEmpty &&
+        !project.trimmingCharacters(in: .whitespaces).isEmpty &&
+        !equipmentId.trimmingCharacters(in: .whitespaces).isEmpty
+    }
     
     var body: some View {
         NavigationStack {
             Form {
                 Section(header: Text("Basic Information")) {
-                    TextField("Date", text: $date)
-                    TextField("Project", text: $project)
+                    TextField("Date *", text: $date)
+                    TextField("Project *", text: $project)
                     TextField("Municipality", text: $municipality)
                     TextField("OLT", text: $olt)
                     TextField("FSA", text: $fsa)
@@ -35,7 +43,7 @@ struct InspectionFormView: View {
                 Section(header: Text("Inspection Details")) {
                     TextField("As-Built", text: $asBuilt)
                     TextField("Inspection Type", text: $inspectionType)
-                    TextField("Equipment ID", text: $equipmentId)
+                    TextField("Equipment ID *", text: $equipmentId)
                     TextField("Address", text: $address)
                     TextField("Drawing", text: $drawing)
                 }
@@ -67,9 +75,23 @@ struct InspectionFormView: View {
                 
                 Section {
                     Button(action: saveInspection) {
-                        Label("Save Inspection", systemImage: "square.and.arrow.down")
+                        if isSaving {
+                            ProgressView()
+                                .frame(maxWidth: .infinity)
+                        } else {
+                            Label("Save Inspection", systemImage: "square.and.arrow.down")
+                        }
                     }
                     .frame(maxWidth: .infinity)
+                    .disabled(!isFormValid || isSaving)
+                }
+                
+                if !isFormValid {
+                    Section {
+                        Text("* Required fields must be filled")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
             .navigationTitle("New Inspection")
@@ -82,6 +104,10 @@ struct InspectionFormView: View {
     }
     
     private func saveInspection() {
+        guard isFormValid, !isSaving else { return }
+        
+        isSaving = true
+        
         let inspection = Inspection(
             date: date,
             project: project,
@@ -108,6 +134,7 @@ struct InspectionFormView: View {
             alertMessage = "Error saving inspection: \(error.localizedDescription)"
         }
         
+        isSaving = false
         showingSaveAlert = true
     }
     

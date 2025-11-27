@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.qaassist.inspection.app-mergeDebugResources-3:/layout/activity_main.xml",
+        "source": "com.qaassist.inspection.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-mergeDebugResources-3:/layout/item_history.xml",
+        "source": "com.qaassist.inspection.app-main-6:/layout/item_history.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-mergeDebugResources-3:/layout/activity_settings.xml",
+        "source": "com.qaassist.inspection.app-main-6:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-mergeDebugResources-3:/layout/fragment_inspection.xml",
+        "source": "com.qaassist.inspection.app-main-6:/layout/fragment_inspection.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-mergeDebugResources-3:/layout/fragment_settings.xml",
+        "source": "com.qaassist.inspection.app-main-6:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-mergeDebugResources-3:/layout/item_photo.xml",
+        "source": "com.qaassist.inspection.app-main-6:/layout/item_photo.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-mergeDebugResources-3:/layout/fragment_history.xml",
+        "source": "com.qaassist.inspection.app-main-6:/layout/fragment_history.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-mergeDebugResources-3:/layout/dropdown_item.xml",
+        "source": "com.qaassist.inspection.app-main-6:/layout/dropdown_item.xml"
+    }
+]

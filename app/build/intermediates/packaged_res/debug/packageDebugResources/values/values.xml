@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent_red">#F44336</color>
+    <color name="accent_red_dark">#D32F2F</color>
+    <color name="background_white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="dark_gray">#424242</color>
+    <color name="gray">#757575</color>
+    <color name="light_blue">#E3F2FD</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_blue_dark">#1976D2</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <string name="add_picture">ADD PICTURE</string>
+    <string name="address">ADDRESS</string>
+    <string name="app_name">QA Assist</string>
+    <string name="as_built">AS-BUILT</string>
+    <string name="clear_form">CLEAR FORM</string>
+    <string name="delete">DELETE</string>
+    <string name="drawing">DRAWING</string>
+    <string name="equipment_id_type">EQUIPMENT ID/TYPE</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_field_too_long">Field exceeds maximum length</string>
+    <string name="fsa">FSA</string>
+    <string name="inspection_save_failed">Failed to save inspection</string>
+    <string name="inspection_saved">Inspection saved successfully</string>
+    <string name="inspection_type">INSPECTION TYPE</string>
+    <string name="location_unavailable">Location not available</string>
+    <string name="no_inspections_found">No inspections found</string>
+    <string name="observations">OBSERVATIONS</string>
+    <string name="olt">OLT</string>
+    <string name="permission_camera_rationale">Camera permission is required to take photos</string>
+    <string name="permission_location_rationale">Location permission is required for GPS coordinates</string>
+    <string name="permission_storage_rationale">Storage permission is required to save files</string>
+    <string name="photo_content_description">Inspection Photo</string>
+    <string name="photos">PHOTOS</string>
+    <string name="project">PROJECT</string>
+    <string name="save_inspection">SAVE INSPECTION</string>
+    <string name="search_hint">Search inspections...</string>
+    <string name="search_icon_description">Search</string>
+    <string name="select_picture">SELECT</string>
+    <string name="tab_history">HISTORY</string>
+    <string name="tab_inspections">INSPECTIONS</string>
+    <string name="toolbar_navigation_description">Navigation</string>
+    <style name="SpinnerItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:background">@android:color/black</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="Theme.QAAssist" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryVariant">@color/primary_blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/accent_red</item>
+        <item name="colorSecondaryVariant">@color/accent_red_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        <item name="android:statusBarColor">@color/primary_blue</item>
+        
+        <item name="android:windowBackground">@color/background_white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+    <style name="Theme.QAAssist.AppBarOverlay" parent="ThemeOverlay.Material3.Dark.ActionBar"/>
+    <style name="Theme.QAAssist.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.QAAssist.PopupOverlay" parent="ThemeOverlay.Material3.Light"/>
+</resources>

@@ -1,0 +1,78 @@
+[
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/drawable_ic_camera.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/drawable/ic_camera.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/xml_backup_rules.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/layout_item_history.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/layout/item_history.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/layout_activity_settings.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/menu_menu_main.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/menu/menu_main.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/layout_fragment_settings.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/layout_dropdown_item.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/layout/dropdown_item.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/layout_fragment_inspection.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/layout/fragment_inspection.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/drawable_ic_save.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/drawable/ic_save.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/layout_item_photo.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/layout/item_photo.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/drawable_ic_delete.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/drawable/ic_delete.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/drawable_ic_gallery.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/drawable/ic_gallery.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/xml_file_paths.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/layout_activity_main.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/layout_fragment_history.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/layout/fragment_history.xml"
+    },
+    {
+        "merged": "com.qaassist.inspection.app-debug-4:/xml_data_extraction_rules.xml.flat",
+        "source": "com.qaassist.inspection.app-main-6:/xml/data_extraction_rules.xml"
+    }
+]

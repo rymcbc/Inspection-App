@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- For files your app saves to Documents/QA-Assist/ on shared external storage (primarily for pre-Q file:// URIs) -->
+    <external-path
+        name="qa_assist_documents"
+        path="Documents/QA-Assist/" />
+
+    <!-- This is a broad path to the root of external storage.
+         It can be kept as a fallback if files might exist outside Documents/QA-Assist.
+         However, for stricter control, if all your app-generated file:// URIs
+         are within Documents/QA-Assist, this could potentially be removed.
+         For now, let's keep it to be safe. -->
+    <external-path
+        name="external_storage_root"
+        path="." />
+
+    <!-- This path is for your app's specific external files directory (e.g., Android/data/com.qaassist.inspection/files/Pictures).
+         Include it if you explicitly save/share files from this location.
+         Otherwise, it might not be necessary for the current sharing feature. -->
+    <external-files-path
+        name="my_app_images"
+        path="Pictures" />
+
+    <!-- Paths for internal storage. Include if you save/share files from here. -->
+    <files-path
+        name="my_internal_files"
+        path="." />
+    <cache-path
+        name="my_cache_files"
+        path="." />
+</paths>

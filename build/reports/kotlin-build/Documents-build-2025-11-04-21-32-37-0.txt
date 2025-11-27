@@ -1,0 +1,536 @@
+Gradle start parameters:
+  tasks = [:app:assembleDebug]
+  excluded tasks = []
+  current dir = C:\Temp\Inspection App
+  project properties args = [android.studio.version: 252.25557.131.2521.14344949, android.injected.attribution.file.location: C:\Temp\Inspection App\.gradle, com.android.tools.utp.GradleAndroidProjectResolverExtension.enable: true, android.injected.invoked.from.ide: true]
+  system properties args = [idea.active: true, user.variant: , file.encoding: UTF-8, idea.version: 2025.2, user.language: en, user.country: US, idea.vendor.name: Google]
+
+Time metrics:
+  Total Gradle task time: 9.63 s
+  Spent time before task action: 0.11 s
+  Task action before worker execution: 0.84 s
+  Run compilation in Gradle worker: 4.51 s
+    Clear jar cache: 0.00 s
+    Clear output: 0.01 s
+    Precise backup output: 0.07 s
+    Cleaning up the backup stash: 0.04 s
+    Connect to Kotlin daemon: 0.02 s
+    Calculate output size: 0.01 s
+    Run compilation: 2.80 s
+      Non incremental compilation in daemon: 1.68 s
+      Incremental compilation in daemon: 2.79 s
+        Store build info: 0.00 s
+        Calculate initial dirty sources set: 0.10 s
+          Analyze Java file changes: 0.08 s
+          Detect removed classes: 0.02 s
+        Update caches: 0.04 s
+        Sources compilation round: 2.32 s
+          Compiler initialization time: 0.10 s
+          Compiler code analysis: 1.06 s
+          Compiler IR translation: 0.25 s
+          Compiler code generation: 0.89 s
+            Compiler IR lowering: 0.28 s
+            Compiler IR generation: 0.61 s
+        Write history file: 0.01 s
+        Shrink and save current classpath snapshot after compilation: 0.04 s
+          Shrink current classpath snapshot incrementally: 0.03 s
+            Load current classpath snapshot: 0.00 s
+            Load shrunk current classpath snapshot against previous lookups: 0.00 s
+          Save shrunk current classpath snapshot: 0.00 s
+  Start gradle worker: 0.01 s
+
+Size metrics:
+  Total size of the cache directory: 840.0 KB
+    ABI snapshot size: 3.2 KB
+  Increase memory usage: -372384320 B
+  Total memory usage at the end of build: 381.5 MB
+  Total compiler iteration: 2
+    Number of lines analyzed: 1576
+    Number of lines for code generation: 1576
+    Analysis lines per second: 2913
+    Code generation lines per second: 3388
+    Compiler IR translation line number: 1576
+    Compiler IR lowering line number: 1576
+    Compiler IR generation line number: 1576
+  Number of times classpath snapshot is shrunk and saved after compilation: 1
+    Number of classpath entries: 117
+    Size of classpath snapshot: 8.7 MB
+    Size of shrunk classpath snapshot: 100.2 KB
+  Number of times classpath snapshot is loaded: 1
+    Number of cache hits when loading classpath entry snapshots: 117
+  Start time of task action: 2081-09-09T05:04:57
+
+Build attributes:
+  REBUILD_REASON: Incremental compilation is not enabled
+
+Total time for Kotlin tasks: 3.12 s (32.4 % of all tasks time)
+Time  |% of Kotlin time|Task                   
+3.12 s|100.0 %         |:app:compileDebugKotlin
+
+Task ':app:compileDebugKotlin' finished in 3.12 s
+Task info:
+  Kotlin language version: 2.0
+Compilation log for task ':app:compileDebugKotlin':
+  Classpath changes info passed from Gradle task: NoChanges
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.getInspections.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.updateInspection.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.saveInspection.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.deleteInspectionWithFiles.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.getInspectionsByProject.1)
+  Process SignatureChanged(fqName = .kotlin_module)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.parsePhotoPaths.type.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.getAllInspections.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.deleteInspections.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.deleteInspection.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.getInspectionsByType.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.getInspectionCount.1)
+  Process SignatureChanged(fqName = com.qaassist.inspection.repository.InspectionRepository.getInspectionById.1)
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\database\AppDatabase.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\database\AppDatabase.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\database\AppDatabase.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\0.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\database\AppDatabase$Companion.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\database\AppDatabase.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\database\AppDatabase$Companion.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\1.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\database\AppDatabase.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\2.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\database\entities\InspectionEntity.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\database\entities\InspectionEntity.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\database\entities\InspectionEntity.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\3.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\database\entities\InspectionEntity.kt
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\4.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$saveInspection$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$saveInspection$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\5.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$deleteInspectionWithFiles$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$deleteInspectionWithFiles$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\6.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getAllInspections$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getAllInspections$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\7.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspectionById$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspectionById$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\8.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$updateInspection$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$updateInspection$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\9.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$deleteInspection$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$deleteInspection$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\10.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$deleteInspections$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$deleteInspections$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\11.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspectionsByProject$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspectionsByProject$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\12.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspectionsByType$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspectionsByType$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\13.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspectionCount$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspectionCount$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\14.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspections$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$getInspections$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\15.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$parsePhotoPaths$type$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\repository\InspectionRepository$parsePhotoPaths$type$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\16.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt
+  Marking the C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\database\AppDatabase$Companion$MIGRATION_1_2$1.class file as newly added
+  Marking the C:\Temp\Inspection App\app\build\kotlin\compileDebugKotlin\cacheable\dirty-sources.txt file as newly added
+  Compile iteration:
+    app\src\main\java\com\qaassist\inspection\database\AppDatabase.kt <- was modified since last time
+    app\src\main\java\com\qaassist\inspection\database\entities\InspectionEntity.kt <- was modified since last time
+    app\src\main\java\com\qaassist\inspection\repository\InspectionRepository.kt <- was modified since last time
+  Deleting C:\Temp\Inspection App\app\build\kotlin\compileDebugKotlin\cacheable\dirty-sources.txt
+  Process MembersChanged(fqName = com.qaassist.inspection.database.AppDatabase.Companion, names = [MIGRATION_1_2])
+  Process MembersChanged(fqName = com.qaassist.inspection.database.entities.InspectionEntity, names = [component12, component17, municipality, component14, copy, component18])
+  Process SignatureChanged(fqName = com.qaassist.inspection.database.entities.InspectionEntity)
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\InspectionFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\17.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$special$$inlined$activityViewModels$default$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\InspectionFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$special$$inlined$activityViewModels$default$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\18.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$special$$inlined$activityViewModels$default$2.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\InspectionFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$special$$inlined$activityViewModels$default$2.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\19.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$special$$inlined$activityViewModels$default$3.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\InspectionFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$special$$inlined$activityViewModels$default$3.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\20.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$saveInspection$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\InspectionFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$saveInspection$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\21.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$sam$androidx_lifecycle_Observer$0.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\InspectionFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\InspectionFragment$sam$androidx_lifecycle_Observer$0.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\22.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\InspectionFragment.kt
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\adapters\HistoryAdapter.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\adapters\HistoryAdapter.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\adapters\HistoryAdapter.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\23.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\adapters\HistoryAdapter$HistoryViewHolder.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\adapters\HistoryAdapter.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\adapters\HistoryAdapter$HistoryViewHolder.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\24.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\adapters\InspectionDiffCallback.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\adapters\HistoryAdapter.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\adapters\InspectionDiffCallback.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\25.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\adapters\HistoryAdapter.kt
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\26.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\27.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$2.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$2.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\28.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$3.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$3.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\29.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$4.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$4.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\30.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$5.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$viewModels$default$5.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\31.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$activityViewModels$default$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$activityViewModels$default$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\32.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$activityViewModels$default$2.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$activityViewModels$default$2.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\33.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$activityViewModels$default$3.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$special$$inlined$activityViewModels$default$3.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\34.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$setupUI$itemTouchHelperCallback$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$setupUI$itemTouchHelperCallback$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\35.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$setupUI$4.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$setupUI$4.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\36.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$setupFilterDropdowns$3.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$setupFilterDropdowns$3.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\37.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$setupBackButton$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$setupBackButton$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\38.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$sam$androidx_lifecycle_Observer$0.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\fragments\HistoryFragment$sam$androidx_lifecycle_Observer$0.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\39.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\InspectionViewModel.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\InspectionViewModel.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\InspectionViewModel.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\40.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\InspectionViewModel$parsePhotoPaths$type$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\InspectionViewModel.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\InspectionViewModel$parsePhotoPaths$type$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\41.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\InspectionViewModel$saveInspection$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\InspectionViewModel.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\InspectionViewModel$saveInspection$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\42.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\InspectionViewModel$saveInspection$1$result$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\InspectionViewModel.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\InspectionViewModel$saveInspection$1$result$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\43.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\InspectionViewModel.kt
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\database\dao\InspectionDao.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\database\dao\InspectionDao.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\database\dao\InspectionDao.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\44.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\database\dao\InspectionDao.kt
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\HistoryViewModel.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\HistoryViewModel.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\HistoryViewModel.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\45.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\HistoryViewModel$loadInspections$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\HistoryViewModel.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\HistoryViewModel$loadInspections$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\46.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\HistoryViewModel$deleteInspectionAndFiles$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\HistoryViewModel.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\HistoryViewModel$deleteInspectionAndFiles$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\47.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\HistoryViewModel$deleteInspections$1.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\HistoryViewModel.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\viewmodels\HistoryViewModel$deleteInspections$1.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\48.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\viewmodels\HistoryViewModel.kt
+  Compile iteration:
+    app\src\main\java\com\qaassist\inspection\fragments\InspectionFragment.kt <- dirty member com.qaassist.inspection.database.entities#InspectionEntity
+    app\src\main\java\com\qaassist\inspection\adapters\HistoryAdapter.kt <- dirty member com.qaassist.inspection.database.entities#InspectionEntity
+    app\src\main\java\com\qaassist\inspection\fragments\HistoryFragment.kt <- dirty member com.qaassist.inspection.database.entities#InspectionEntity
+    app\src\main\java\com\qaassist\inspection\viewmodels\InspectionViewModel.kt <- dirty member com.qaassist.inspection.database.entities#InspectionEntity
+    app\src\main\java\com\qaassist\inspection\database\dao\InspectionDao.kt <- dirty member com.qaassist.inspection.database.entities#InspectionEntity
+    app\src\main\java\com\qaassist\inspection\viewmodels\HistoryViewModel.kt <- dirty member com.qaassist.inspection.database.entities#InspectionEntity
+  Deleting C:\Temp\Inspection App\app\build\kotlin\compileDebugKotlin\cacheable\dirty-sources.txt
+  Moving C:\Temp\Inspection App\app\build\kotlin\compileDebugKotlin\cacheable\last-build.bin to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\49.backup
+  Moving C:\Temp\Inspection App\app\build\kotlin\compileDebugKotlin\local-state\build-history.bin to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\50.backup
+  [ClasspathSnapshot] Shrunk current classpath snapshot after compilation (shrink mode = ChangedLookupsUnchangedClasspath), retained 425 / 23344 classes
+  Moving C:\Temp\Inspection App\app\build\kotlin\compileDebugKotlin\cacheable\caches-jvm\lookups\counters.tab to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups9877305525528663050\51.backup
+  Cleaning up stash
+  Incremental compilation completed
+Time metrics:
+  Total Gradle task time: 3.12 s
+  Spent time before task action: 0.02 s
+  Task action before worker execution: 0.15 s
+  Run compilation in Gradle worker: 2.81 s
+    Clear jar cache: 0.00 s
+    Precise backup output: 0.07 s
+    Cleaning up the backup stash: 0.04 s
+    Connect to Kotlin daemon: 0.01 s
+    Calculate output size: 0.01 s
+    Run compilation: 2.80 s
+      Incremental compilation in daemon: 2.79 s
+        Store build info: 0.00 s
+        Calculate initial dirty sources set: 0.10 s
+          Analyze Java file changes: 0.08 s
+          Detect removed classes: 0.02 s
+        Update caches: 0.04 s
+        Sources compilation round: 2.32 s
+          Compiler initialization time: 0.10 s
+          Compiler code analysis: 1.06 s
+          Compiler IR translation: 0.25 s
+          Compiler code generation: 0.89 s
+            Compiler IR lowering: 0.28 s
+            Compiler IR generation: 0.61 s
+        Write history file: 0.01 s
+        Shrink and save current classpath snapshot after compilation: 0.04 s
+          Shrink current classpath snapshot incrementally: 0.03 s
+            Load current classpath snapshot: 0.00 s
+            Load shrunk current classpath snapshot against previous lookups: 0.00 s
+          Save shrunk current classpath snapshot: 0.00 s
+  Start gradle worker: 0.00 s
+Size metrics:
+  Total size of the cache directory: 840.0 KB
+    ABI snapshot size: 3.2 KB
+  Increase memory usage: 17.4 MB
+  Total memory usage at the end of build: 200.0 MB
+  Total compiler iteration: 2
+    Number of lines analyzed: 1576
+    Number of lines for code generation: 1576
+    Analysis lines per second: 2913
+    Code generation lines per second: 3388
+    Compiler IR translation line number: 1576
+    Compiler IR lowering line number: 1576
+    Compiler IR generation line number: 1576
+  Number of times classpath snapshot is shrunk and saved after compilation: 1
+    Number of classpath entries: 117
+    Size of classpath snapshot: 8.7 MB
+    Size of shrunk classpath snapshot: 100.2 KB
+  Number of times classpath snapshot is loaded: 1
+    Number of cache hits when loading classpath entry snapshots: 117
+  Start time of task action: 2025-11-05T02:32:30
+GC metrics:
+  PS MarkSweep:
+    GC count: 0
+    GC time: 0.00 s
+  PS Scavenge:
+    GC count: 1
+    GC time: 0.05 s
+
+Task ':app:kspDebugKotlin' finished in 2.50 s
+Task info:
+  Kotlin language version: 1.9
+Compilation log for task ':app:kspDebugKotlin':
+  Compiler perf stats:
+  INIT: Compiler initialized in 139 ms
+          ANALYZE    1180 ms    1991.525 loc/s
+          ANALYZE     348 ms    6752.874 loc/s
+  Find Java class performed 21 times, total time 5 ms
+  Type info performed 314 times, total time 544 ms
+  Call resolve performed 418 times, total time 645 ms
+  Binary class from Kotlin file performed 15791 times, total time 2777 ms
+  Find Java class performed 15 times, total time 4 ms
+  Find Java class performed 0 times
+  Find Java class performed 2 times, total time 81 ms
+  Find Java class performed 21 times, total time 2 ms
+  Find Java class performed 30 times, total time 166 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 18 times, total time 0 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 18 times, total time 2 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 27 times, total time 51 ms
+  Find Java class performed 19 times, total time 4 ms
+  Find Java class performed 28 times, total time 47 ms
+  Find Java class performed 16 times, total time 1 ms
+  Find Java class performed 39 times, total time 45 ms
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 1 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 18 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 18 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 2 times, total time 0 ms
+  Find Java class performed 16 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 2 times, total time 0 ms
+  Find Java class performed 19 times, total time 1 ms
+  Find Java class performed 18 times, total time 0 ms
+Time metrics:
+  Total Gradle task time: 2.50 s
+  Spent time before task action: 0.09 s
+  Task action before worker execution: 0.69 s
+  Run compilation in Gradle worker: 1.70 s
+    Clear jar cache: 0.00 s
+    Clear output: 0.01 s
+    Connect to Kotlin daemon: 0.01 s
+    Non incremental compilation in daemon: 1.68 s
+  Start gradle worker: 0.01 s
+Size metrics:
+  Increase memory usage: -390618448 B
+  Total memory usage at the end of build: 181.4 MB
+  Start time of task action: 2025-11-05T02:32:27
+Build attributes:
+  REBUILD_REASON: Incremental compilation is not enabled
+
+Task ':app:compileDebugJavaWithJavac' finished in 2.13 s
+Time metrics:
+  Total Gradle task time: 2.13 s
+
+Task ':app:dexBuilderDebug' finished in 0.84 s
+Time metrics:
+  Total Gradle task time: 0.84 s
+
+Task ':app:packageDebug' finished in 0.67 s
+Time metrics:
+  Total Gradle task time: 0.67 s
+
+Task ':app:mergeProjectDexDebug' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':app:dataBindingMergeDependencyArtifactsDebug' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':app:processDebugMainManifest' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:mapDebugSourceSetPaths' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:processDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:mergeExtDexDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:mergeDebugGlobalSynthetics' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:mergeDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:dataBindingGenBaseClassesDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:checkDebugDuplicateClasses' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:mergeDebugAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:mergeDebugNativeLibs' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:desugarDebugFileDependencies' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:generateSafeArgsDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:createDebugApkListingFileRedirect' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:generateDebugBuildConfig' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:javaPreCompileDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:l8DexDesugarLibDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:packageDebugResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:compileDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:validateSigningDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:processDebugManifest' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:processDebugManifestForPackage' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:mergeDebugNativeDebugMetadata' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:createDebugCompatibleScreenManifests' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:compressDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:writeDebugAppMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:parseDebugLocalResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:writeDebugSigningConfigVersions' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:stripDebugDebugSymbols' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:mergeLibDexDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:processDebugJavaRes' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:generateDebugAssets' finished in 0.00 s
+
+Task ':app:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':app:preBuild' finished in 0.00 s
+
+Task ':app:preDebugBuild' finished in 0.00 s
+
+Task ':app:extractDeepLinksDebug' finished in 0.00 s
+
+Task ':app:assembleDebug' finished in 0.00 s
+

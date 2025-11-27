@@ -1,0 +1,317 @@
+Gradle start parameters:
+  tasks = [assembleDebug]
+  excluded tasks = []
+  current dir = C:\Temp\Inspection App
+  project properties args = []
+  system properties args = [user.variant: , file.encoding: UTF-8, user.country: US, user.language: en]
+
+Build failed: [Execution failed for task ':app:compileDebugKotlin'.]
+
+Time metrics:
+  Total Gradle task time: 13.42 s
+  Spent time before task action: 0.35 s
+  Task action before worker execution: 0.99 s
+  Run compilation in Gradle worker: 1.70 s
+    Clear jar cache: 0.00 s
+    Clear output: 0.01 s
+    Precise backup output: 0.00 s
+    Restore output: 0.00 s
+    Connect to Kotlin daemon: 0.10 s
+    Calculate output size: 0.01 s
+    Run compilation: 0.26 s
+      Non incremental compilation in daemon: 1.32 s
+      Incremental compilation in daemon: 0.24 s
+        Calculate initial dirty sources set: 0.01 s
+          Detect removed classes: 0.01 s
+        Sources compilation round: 0.18 s
+          Compiler initialization time: 0.06 s
+          Compiler code analysis: 0.12 s
+        Write history file: 0.00 s
+  Start gradle worker: 0.05 s
+
+Size metrics:
+  Total size of the cache directory: 771.9 KB
+    ABI snapshot size: 18 B
+  Increase memory usage: 275.2 MB
+  Total memory usage at the end of build: 840.7 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 72
+    Analysis lines per second: 605
+  Start time of task action: 2081-09-09T03:13:42
+
+Build attributes:
+  REBUILD_REASON: Incremental compilation is not enabled
+
+Total time for Kotlin tasks: 0.58 s (4.3 % of all tasks time)
+Time  |% of Kotlin time|Task                   
+0.58 s|100.0 %         |:app:compileDebugKotlin
+
+Task ':app:kspDebugKotlin' finished in 2.57 s
+Task info:
+  Kotlin language version: 1.9
+Compilation log for task ':app:kspDebugKotlin':
+  Compiler perf stats:
+  INIT: Compiler initialized in 100 ms
+          ANALYZE     928 ms    2479.526 loc/s
+          ANALYZE     277 ms    8306.859 loc/s
+  Find Java class performed 21 times, total time 5 ms
+  Type info performed 235 times, total time 339 ms
+  Call resolve performed 323 times, total time 548 ms
+  Binary class from Kotlin file performed 12102 times, total time 2342 ms
+  Find Java class performed 15 times, total time 4 ms
+  Find Java class performed 0 times
+  Find Java class performed 2 times, total time 81 ms
+  Find Java class performed 21 times, total time 2 ms
+  Find Java class performed 30 times, total time 166 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 18 times, total time 0 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 18 times, total time 2 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 18 times, total time 1 ms
+  Find Java class performed 27 times, total time 51 ms
+  Find Java class performed 19 times, total time 4 ms
+  Find Java class performed 28 times, total time 47 ms
+  Find Java class performed 16 times, total time 1 ms
+  Find Java class performed 39 times, total time 45 ms
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 1 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 15 times, total time 0 ms
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 0 times
+  Find Java class performed 18 times, total time 0 ms
+Time metrics:
+  Total Gradle task time: 2.57 s
+  Spent time before task action: 0.25 s
+  Task action before worker execution: 0.81 s
+  Run compilation in Gradle worker: 1.43 s
+    Clear jar cache: 0.00 s
+    Clear output: 0.01 s
+    Connect to Kotlin daemon: 0.09 s
+    Non incremental compilation in daemon: 1.32 s
+  Start gradle worker: 0.03 s
+Size metrics:
+  Increase memory usage: 183.3 MB
+  Total memory usage at the end of build: 373.9 MB
+  Start time of task action: 2025-11-05T01:36:50
+Build attributes:
+  REBUILD_REASON: Incremental compilation is not enabled
+
+Task ':app:dataBindingMergeDependencyArtifactsDebug' finished in 1.00 s
+Time metrics:
+  Total Gradle task time: 1.00 s
+
+Task ':app:processDebugNavigationResources' finished in 0.98 s
+Time metrics:
+  Total Gradle task time: 0.98 s
+
+Task ':app:checkDebugAarMetadata' finished in 0.98 s
+Time metrics:
+  Total Gradle task time: 0.98 s
+
+Task ':app:desugarDebugFileDependencies' finished in 0.88 s
+Time metrics:
+  Total Gradle task time: 0.88 s
+
+Task ':app:l8DexDesugarLibDebug' finished in 0.88 s
+Time metrics:
+  Total Gradle task time: 0.88 s
+
+Task ':app:checkDebugDuplicateClasses' finished in 0.87 s
+Time metrics:
+  Total Gradle task time: 0.87 s
+
+Task ':app:mergeDebugResources' finished in 0.85 s
+Time metrics:
+  Total Gradle task time: 0.85 s
+
+Task ':app:mergeDebugAssets' finished in 0.83 s
+Time metrics:
+  Total Gradle task time: 0.83 s
+
+Task ':app:processDebugResources' finished in 0.60 s
+Time metrics:
+  Total Gradle task time: 0.60 s
+
+Task ':app:compileDebugKotlin' finished in 0.58 s
+Task info:
+  Kotlin language version: 2.0
+Compilation log for task ':app:compileDebugKotlin':
+  Classpath changes info passed from Gradle task: NoChanges
+  Process SignatureChanged(fqName = .kotlin_module)
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\utils\ExcelGenerator.class on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\utils\ExcelGenerator.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\com\qaassist\inspection\utils\ExcelGenerator.class to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups6569116199221196804\0.backup
+  Deleting C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module on clearing cache for C:\Temp\Inspection App\app\src\main\java\com\qaassist\inspection\utils\ExcelGenerator.kt
+  Moving C:\Temp\Inspection App\app\build\tmp\kotlin-classes\debug\META-INF\app_debug.kotlin_module to the stash as C:\Users\RYMCMI~1\AppData\Local\Temp\kotlin-backups6569116199221196804\1.backup
+  Marking the C:\Temp\Inspection App\app\build\kotlin\compileDebugKotlin\cacheable\dirty-sources.txt file as newly added
+  Compile iteration:
+    app\src\main\java\com\qaassist\inspection\utils\ExcelGenerator.kt <- was modified since last time
+  Marking the C:\Temp\Inspection App\app\build\kotlin\compileDebugKotlin\local-state\build-history.bin file as newly added
+  Reverting changes
+  Cleaning up stash
+  Incremental compilation completed
+Time metrics:
+  Total Gradle task time: 0.58 s
+  Spent time before task action: 0.11 s
+  Task action before worker execution: 0.18 s
+  Run compilation in Gradle worker: 0.27 s
+    Precise backup output: 0.00 s
+    Restore output: 0.00 s
+    Connect to Kotlin daemon: 0.01 s
+    Calculate output size: 0.01 s
+    Run compilation: 0.26 s
+      Incremental compilation in daemon: 0.24 s
+        Calculate initial dirty sources set: 0.01 s
+          Detect removed classes: 0.01 s
+        Sources compilation round: 0.18 s
+          Compiler initialization time: 0.06 s
+          Compiler code analysis: 0.12 s
+        Write history file: 0.00 s
+  Start gradle worker: 0.02 s
+Size metrics:
+  Total size of the cache directory: 771.9 KB
+    ABI snapshot size: 18 B
+  Increase memory usage: 91.9 MB
+  Total memory usage at the end of build: 466.8 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 72
+    Analysis lines per second: 605
+  Start time of task action: 2025-11-05T01:36:52
+GC metrics:
+  PS MarkSweep:
+    GC count: 0
+    GC time: 0.00 s
+  PS Scavenge:
+    GC count: 0
+    GC time: 0.00 s
+
+Task ':app:mergeExtDexDebug' finished in 0.47 s
+Time metrics:
+  Total Gradle task time: 0.47 s
+
+Task ':app:processDebugMainManifest' finished in 0.45 s
+Time metrics:
+  Total Gradle task time: 0.45 s
+
+Task ':app:dataBindingGenBaseClassesDebug' finished in 0.44 s
+Time metrics:
+  Total Gradle task time: 0.44 s
+
+Task ':app:mergeDebugNativeLibs' finished in 0.41 s
+Time metrics:
+  Total Gradle task time: 0.41 s
+
+Task ':app:generateSafeArgsDebug' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':app:generateDebugResValues' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':app:generateDebugBuildConfig' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':app:createDebugCompatibleScreenManifests' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':app:javaPreCompileDebug' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':app:packageDebugResources' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':app:mergeDebugNativeDebugMetadata' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':app:writeDebugAppMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:mapDebugSourceSetPaths' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:mergeDebugJniLibFolders' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:parseDebugLocalResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:stripDebugDebugSymbols' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:writeDebugSigningConfigVersions' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:mergeLibDexDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:compileDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:preBuild' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:generateDebugAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:processDebugManifest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:compressDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:extractDeepLinksDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:validateSigningDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:processDebugManifestForPackage' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:preDebugBuild' finished in 0.00 s
+

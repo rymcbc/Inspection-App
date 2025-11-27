@@ -1,0 +1,74 @@
+com.qaassist.inspection.app-resValues-0 C:\Temp\Inspection App\app\build\generated\res\resValues\debug
+com.qaassist.inspection.app-updated_navigation_xml-1 C:\Temp\Inspection App\app\build\generated\updated_navigation_xml\debug
+com.qaassist.inspection.app-packageDebugResources-2 C:\Temp\Inspection App\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.qaassist.inspection.app-packageDebugResources-3 C:\Temp\Inspection App\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.qaassist.inspection.app-debug-4 C:\Temp\Inspection App\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.qaassist.inspection.app-debug-5 C:\Temp\Inspection App\app\src\debug\res
+com.qaassist.inspection.app-main-6 C:\Temp\Inspection App\app\src\main\res
+com.qaassist.inspection.app-drawerlayout-1.1.1-7 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\0439328469be639e02572094ad314f16\transformed\drawerlayout-1.1.1\res
+com.qaassist.inspection.app-jetified-camera-camera2-1.4.0-8 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\0748443a2a53afa05dd19879ff35a5c6\transformed\jetified-camera-camera2-1.4.0\res
+com.qaassist.inspection.app-transition-1.5.0-9 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\074a65426863f0a4788b96fb60a2ef73\transformed\transition-1.5.0\res
+com.qaassist.inspection.app-navigation-fragment-2.8.1-10 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\0a2c53347ca8508b2bb893215ba9670a\transformed\navigation-fragment-2.8.1\res
+com.qaassist.inspection.app-navigation-runtime-ktx-2.8.1-11 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\0d920f1a0376be2821918443c596da0b\transformed\navigation-runtime-ktx-2.8.1\res
+com.qaassist.inspection.app-jetified-lifecycle-viewmodel-release-12 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\1202d61edd6568448a57e26dc74fd639\transformed\jetified-lifecycle-viewmodel-release\res
+com.qaassist.inspection.app-jetified-activity-1.9.2-13 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\1261991d17292d6edecd9302c71f23ff\transformed\jetified-activity-1.9.2\res
+com.qaassist.inspection.app-lifecycle-livedata-core-2.8.6-14 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\19827be5d44d5261d1b01384d232a8ce\transformed\lifecycle-livedata-core-2.8.6\res
+com.qaassist.inspection.app-fragment-1.8.4-15 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\245574b8c93d6d2d67f782a52d5b6076\transformed\fragment-1.8.4\res
+com.qaassist.inspection.app-jetified-profileinstaller-1.4.0-16 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\2827011a69150f3c2f4315ab57f9b055\transformed\jetified-profileinstaller-1.4.0\res
+com.qaassist.inspection.app-jetified-play-services-base-18.5.0-17 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\2e8238b988e0ed283ac6178b54b18974\transformed\jetified-play-services-base-18.5.0\res
+com.qaassist.inspection.app-jetified-lifecycle-viewmodel-savedstate-2.8.6-18 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\316e032a2d2bdee6df70aa1501fa5d79\transformed\jetified-lifecycle-viewmodel-savedstate-2.8.6\res
+com.qaassist.inspection.app-swiperefreshlayout-1.1.0-19 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\37e5d46eee8d5cef9887d57da86f22ff\transformed\swiperefreshlayout-1.1.0\res
+com.qaassist.inspection.app-jetified-core-ktx-1.15.0-20 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\40209f26921bdaf788329bfa123d23ae\transformed\jetified-core-ktx-1.15.0\res
+com.qaassist.inspection.app-jetified-savedstate-1.2.1-21 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\4224b7350064905e5f897bd8f416c489\transformed\jetified-savedstate-1.2.1\res
+com.qaassist.inspection.app-jetified-savedstate-ktx-1.2.1-22 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\52471558bc7bc8b019367c06092a4e14\transformed\jetified-savedstate-ktx-1.2.1\res
+com.qaassist.inspection.app-navigation-ui-ktx-2.8.1-23 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\53ec25b8746c311d620eedf1dd9bad7c\transformed\navigation-ui-ktx-2.8.1\res
+com.qaassist.inspection.app-work-runtime-ktx-2.9.1-24 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\54a6440321da7e7d46a98f52ef720d19\transformed\work-runtime-ktx-2.9.1\res
+com.qaassist.inspection.app-navigation-common-2.8.1-25 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\54e23d3a2708e7dd43cbf11252ef91bf\transformed\navigation-common-2.8.1\res
+com.qaassist.inspection.app-jetified-lifecycle-viewmodel-ktx-2.8.6-26 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\590e880c4b17604a29e130529b69d13a\transformed\jetified-lifecycle-viewmodel-ktx-2.8.6\res
+com.qaassist.inspection.app-jetified-lifecycle-runtime-ktx-release-27 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\5e6f1e8a16f0234822cc784f30363e3b\transformed\jetified-lifecycle-runtime-ktx-release\res
+com.qaassist.inspection.app-work-runtime-2.9.1-28 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\5e795f0b99f5b8b64f8836f45cfcb674\transformed\work-runtime-2.9.1\res
+com.qaassist.inspection.app-jetified-tracing-1.2.0-29 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\5f434977ba7e6570e6753e9b8cd0816f\transformed\jetified-tracing-1.2.0\res
+com.qaassist.inspection.app-jetified-camera-view-1.4.0-30 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\61b22b9bf8d0407c14332abcf776c0cd\transformed\jetified-camera-view-1.4.0\res
+com.qaassist.inspection.app-navigation-runtime-2.8.1-31 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\650ba12dc4f06dcd57db4e9c58ade599\transformed\navigation-runtime-2.8.1\res
+com.qaassist.inspection.app-jetified-startup-runtime-1.1.1-32 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\692c13e8702bd7e746ded6b09df2e433\transformed\jetified-startup-runtime-1.1.1\res
+com.qaassist.inspection.app-core-1.15.0-33 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\6a5e499724bee433a683c60575afd61c\transformed\core-1.15.0\res
+com.qaassist.inspection.app-lifecycle-livedata-2.8.6-34 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\6dbb2f79c5fb3f78c524918661a04b5f\transformed\lifecycle-livedata-2.8.6\res
+com.qaassist.inspection.app-jetified-viewpager2-1.1.0-35 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\71d1736d99f707df7aba267f9d46219c\transformed\jetified-viewpager2-1.1.0\res
+com.qaassist.inspection.app-jetified-activity-ktx-1.9.2-36 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\72352c79882bc12f64c94de6738cddb1\transformed\jetified-activity-ktx-1.9.2\res
+com.qaassist.inspection.app-jetified-camera-extensions-1.4.0-37 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\762e17c1175e688b7c8463665a073494\transformed\jetified-camera-extensions-1.4.0\res
+com.qaassist.inspection.app-appcompat-1.7.0-38 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\7a028c7d135edd08912facb785936e26\transformed\appcompat-1.7.0\res
+com.qaassist.inspection.app-jetified-lifecycle-livedata-core-ktx-2.8.6-39 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\7d928903431d34df76f1621b34cb313e\transformed\jetified-lifecycle-livedata-core-ktx-2.8.6\res
+com.qaassist.inspection.app-constraintlayout-2.2.0-40 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\80978f43ff7ce055e2f727dc10bba7f5\transformed\constraintlayout-2.2.0\res
+com.qaassist.inspection.app-jetified-play-services-basement-18.4.0-41 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\854ed676967b974c5a426c50fa8d6d40\transformed\jetified-play-services-basement-18.4.0\res
+com.qaassist.inspection.app-cardview-1.0.0-42 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\8563d14ab2fea9ea4ff8939e8c8b4d1b\transformed\cardview-1.0.0\res
+com.qaassist.inspection.app-core-runtime-2.2.0-43 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\88afcf4f6f23074075378cb3d57cdc40\transformed\core-runtime-2.2.0\res
+com.qaassist.inspection.app-material-1.12.0-44 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\917920303695ef5426d8f94cba8919ac\transformed\material-1.12.0\res
+com.qaassist.inspection.app-recyclerview-1.3.2-45 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\92ede827b4d9f74fa87752db5a08319b\transformed\recyclerview-1.3.2\res
+com.qaassist.inspection.app-jetified-appcompat-resources-1.7.0-46 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\95cdd4c39e89d58c5c539f1e08d2c3f7\transformed\jetified-appcompat-resources-1.7.0\res
+com.qaassist.inspection.app-jetified-emoji2-views-helper-1.3.0-47 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\9aec31d067e6ec76af26252bb1e3fbe9\transformed\jetified-emoji2-views-helper-1.3.0\res
+com.qaassist.inspection.app-jetified-room-ktx-2.6.1-48 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\a1c30a4328dc0ace9d0c86e13ebf2e7f\transformed\jetified-room-ktx-2.6.1\res
+com.qaassist.inspection.app-navigation-ui-2.8.1-49 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\a4a2fe4ca4cd83179c44aad4266ecbbc\transformed\navigation-ui-2.8.1\res
+com.qaassist.inspection.app-jetified-tracing-ktx-1.2.0-50 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\adcfec792d00ad2060c8f3dafd1f9fd2\transformed\jetified-tracing-ktx-1.2.0\res
+com.qaassist.inspection.app-jetified-lifecycle-process-2.8.6-51 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\af3621b86a6169f16709f50d222c133c\transformed\jetified-lifecycle-process-2.8.6\res
+com.qaassist.inspection.app-jetified-lifecycle-runtime-release-52 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\b29ff1c8ef77aa56cbe09b49a486ee3b\transformed\jetified-lifecycle-runtime-release\res
+com.qaassist.inspection.app-jetified-lifecycle-service-2.8.6-53 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\b47bd635b524c47f20a51819368297e5\transformed\jetified-lifecycle-service-2.8.6\res
+com.qaassist.inspection.app-jetified-emoji2-1.3.0-54 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\b83a9b286708bc7ebd7b2ceb7ac717e8\transformed\jetified-emoji2-1.3.0\res
+com.qaassist.inspection.app-jetified-customview-poolingcontainer-1.0.0-55 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\c0137a97650dfc1dd91dfb053c5dc35f\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.qaassist.inspection.app-jetified-glide-4.16.0-56 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\c86ced4d63ddabad29b5d3ab215068f6\transformed\jetified-glide-4.16.0\res
+com.qaassist.inspection.app-slidingpanelayout-1.2.0-57 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\cae4740768fceddb51602025e336de7b\transformed\slidingpanelayout-1.2.0\res
+com.qaassist.inspection.app-jetified-camera-video-1.4.0-58 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\cbb5c9897962d11e74d075c5a9df366f\transformed\jetified-camera-video-1.4.0\res
+com.qaassist.inspection.app-jetified-annotation-experimental-1.4.1-59 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\ce33092f49b44c86975a16a93376b88a\transformed\jetified-annotation-experimental-1.4.1\res
+com.qaassist.inspection.app-room-runtime-2.6.1-60 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\cf326e10809898523f8caea1d0a98dcf\transformed\room-runtime-2.6.1\res
+com.qaassist.inspection.app-sqlite-2.4.0-61 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\cfc5ad04f64aa0f6297bdc6e1755fe2d\transformed\sqlite-2.4.0\res
+com.qaassist.inspection.app-jetified-camera-lifecycle-1.4.0-62 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\d024449a39216c2e1a099049ac9b603a\transformed\jetified-camera-lifecycle-1.4.0\res
+com.qaassist.inspection.app-jetified-play-services-maps-19.0.0-63 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\d5ed821ca7ae017a440504b840f57b1a\transformed\jetified-play-services-maps-19.0.0\res
+com.qaassist.inspection.app-navigation-fragment-ktx-2.8.1-64 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\e000d5de3b9ddeb4ff3afc5b15f8c784\transformed\navigation-fragment-ktx-2.8.1\res
+com.qaassist.inspection.app-jetified-fragment-ktx-1.8.4-65 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\e0a288c99b886a73afc37294647144d4\transformed\jetified-fragment-ktx-1.8.4\res
+com.qaassist.inspection.app-jetified-lifecycle-livedata-ktx-2.8.6-66 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\eb04b756618920ea56fada6df1461321\transformed\jetified-lifecycle-livedata-ktx-2.8.6\res
+com.qaassist.inspection.app-navigation-common-ktx-2.8.1-67 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\ec89bc63ee988e70e2a63d92c6072270\transformed\navigation-common-ktx-2.8.1\res
+com.qaassist.inspection.app-recyclerview-selection-1.1.0-68 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\f373635cd148316fd1d79878281da88f\transformed\recyclerview-selection-1.1.0\res
+com.qaassist.inspection.app-jetified-window-1.0.0-69 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\f37e40b9ad0747f2a1e298b8f283d3a4\transformed\jetified-window-1.0.0\res
+com.qaassist.inspection.app-jetified-security-crypto-1.1.0-alpha06-70 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\f4e9bc8324f23b46ff2d23a27ff9c3c2\transformed\jetified-security-crypto-1.1.0-alpha06\res
+com.qaassist.inspection.app-jetified-camera-core-1.4.0-71 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\f52e878ececeaad51346eaa77e7067b8\transformed\jetified-camera-core-1.4.0\res
+com.qaassist.inspection.app-sqlite-framework-2.4.0-72 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\fa1243c4c2ccd5033225df5ed1942cc9\transformed\sqlite-framework-2.4.0\res
+com.qaassist.inspection.app-coordinatorlayout-1.1.0-73 C:\Users\RyMcmillan\.gradle\caches\8.13\transforms\ffb4d67b58244e575401b3b957b03ad1\transformed\coordinatorlayout-1.1.0\res
